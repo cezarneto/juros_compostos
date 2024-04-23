@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>.:: Calculadora de Juros Compostos - Rocane ::. </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Calculadora de Juros Compostos</h1>
+  <script src="juros_compostos.js"></script>
+  <form onsubmit="calcularJurosCompostos(); return false;">
+    <div class="campo">
+      <label for="valorInicial">Valor Inicial (R$):</label>
+      <input type="number" id="valorInicial" name="valorInicial" required step="0.01">
+    </div>
+
+    <div class="campo">
+      <label for="aporteMensal">Aporte Mensal (R$):</label>
+      <input type="number" id="aporteMensal" name="aporteMensal" required step="0.01">
+    </div>
+
+    <div class="campo">
+      <label for="taxaJuros">Taxa de Juros:</label>
+      <input type="number" id="taxaJuros" name="taxaJuros" required step="0.01">
+      <select id="unidadeTaxaJuros">
+        <option value="mensal">a.m.</option>
+        <option value="anual">a.a.</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="periodo">Período:</label>
+      <input type="number" id="periodo" name="periodo" required step="0.01">
+      <select id="tipoPeriodo">
+        <option value="meses">mes(es)</option>
+        <option value="anos">ano(s)</option>
+      </select>
+    </div>
+
+    <button type="submit">Calcular</button>
+  </form>
+
+  <div id="resultados">
+    <h2>Resultados</h2>
+    <p>Valor Total Final: R$ <span id="valorTotalFinal"></span></p>
+    <p>Valor Total Investido: R$ <span id="valorTotalInvestido"></span></p>
+    <p>Total em Juros: R$ <span id="totalJuros"></span></p>
+  </div>
+</body>
+</html>
